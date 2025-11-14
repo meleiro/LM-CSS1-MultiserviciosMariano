@@ -5,54 +5,80 @@
 */
 
 /* 
-El selector universal (*) aplica estilos a TODOS los elementos del documento HTML.
-Aquí damos un color de fondo común para visualizar bien el área de la página.
+El selector universal aplica un color de fondo base a todo el documento.
+Se utiliza un verde muy claro para facilitar la lectura sobre el fondo.
 */
 * {
-  background-color: blanchedalmond; /* Fondo beige claro aplicado a todo */
+  background-color: #EAF4EC; /* Verde claro */
 }
 
 /* 
-El elemento raíz <html> define el color base del texto de toda la página.
-Este color puede heredarse por los elementos descendientes.
+El elemento raíz define color base del texto.
 */
 html {
-  color: black; /* Texto negro por defecto */
+  color: #1A1A1A; /* Gris oscuro para alta legibilidad */
 }
 
 /*
-El cuerpo del documento. Aquí se definen los estilos generales del texto y la fuente.
+Fuente base del documento. Se usa Poppins por su buena legibilidad y estilo geométrico.
 */
 body {
-  font-family: Arial;    /* Fuente general del sitio */
-  font-size: 16px;       /* Tamaño base del texto (legible en pantallas) */
-  /* No se establece color ni fondo porque ya los hereda de html y * */
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
 }
+
+
+/* ----------------------------------------------------------
+   CABECERA CON FONDO OSCURO COMPLETO
+---------------------------------------------------------- */
+
+header {
+  background-color: #111;   /* Gris casi negro */
+  color: #fff;              /* Texto blanco */
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* Subtítulo */
+header p {
+  color: #ccc;              /* Gris claro */
+  background-color: #111;   /* Asegura que NO queda franja blanca debajo */
+  margin: 0;
+  padding: 10px 0;
+}
+
+/* Imagen dentro de la cabecera */
+header img {
+  background-color: #111;   /* Evita que salga un rectángulo claro */
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 180px;
+  height: auto;
+}
+
+/* Si tienes un contenedor de la imagen dentro del header */
+header .img-wrapper {
+  background-color: #111;    /* Elimina fondos claros */
+  padding: 20px 0;
+}
+
+
 
 /* 
 ----------------------------------------------------------
-   CABECERA <header>
+   SECCIÓN CON IMAGEN / HERO AREA
 ----------------------------------------------------------
 */
 
 /*
-Estilo general del encabezado de la página.
-Se centra el texto y se usa un color de fondo destacado con texto claro encima.
+Área destacada donde se muestra la imagen principal.
+El fondo se cambia a un verde medio para generar contraste uniforme.
 */
-header {
-  text-align: center;     /* Centra el contenido horizontalmente */
-  background-color: blue; /* Fondo azul */
-  color: azure;           /* Texto en azul muy claro (buen contraste sobre azul oscuro) */
+.hero-area,
+.hero {
+  background-color: #A8D5BA; /* Verde suave */
 }
 
-/*
-Este selector afecta solo a las imágenes dentro del <header>.
-Así se controlan sus proporciones sin deformarlas.
-*/
-header img {
-  width: 100px;  /* Ancho fijo de 100 píxeles */
-  height: auto;  /* Mantiene proporciones originales (evita distorsión) */
-}
 
 /* 
 ----------------------------------------------------------
@@ -61,18 +87,21 @@ header img {
 */
 
 /*
-Estilo base de los enlaces: sin subrayado para un aspecto más limpio.
+Los enlaces usan un color verde oscuro que mantiene contraste suficiente.
 */
 a {
-  text-decoration: none; /* Quita la línea inferior de los enlaces */
+  text-decoration: none;
+  color: #145A32; /* Verde oscuro */
 }
 
 /*
-Cuando el usuario pasa el ratón por encima (hover), se subraya para indicar interactividad.
+El estado hover modifica ligeramente el color para indicar interacción.
 */
 a:hover {
-  text-decoration: underline; /* Subrayado en el estado hover */
+  text-decoration: underline;
+  color: #27AE60; /* Verde más claro */
 }
+
 
 /* 
 ----------------------------------------------------------
@@ -81,30 +110,36 @@ a:hover {
 */
 
 /*
-Clase aplicada probablemente a una imagen de logotipo o similar.
-Permite reutilizar el estilo donde se necesite.
+La clase .logo controla el tamaño y la forma del logotipo.
 */
 .logo {
-  width: 20%;            /* Ocupa el 20% del ancho del contenedor padre */
-  height: auto;          /* Mantiene proporción original */
-  border-radius: 10px;   /* Redondea ligeramente las esquinas */
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #145A32; /* Borde verde oscuro */
 }
+
 
 /* 
 ----------------------------------------------------------
-   CLASE .content h2
+   TITULOS
 ----------------------------------------------------------
 */
 
 /*
-Estilo para los títulos <h2> dentro de un contenedor con clase .content.
-Se cambian color, tamaño y márgenes.
+Estilo para <h2> dentro de la sección .content.
 */
-.content h2 {
-  font-size: 1.6rem;             /* Tamaño de letra relativo (1rem = 16px → 25.6px) */
-  color: blue;                   /* Texto azul */
-  margin: 200px 130px 50px;      /* Margen: 200px arriba, 130px a los lados, 50px abajo */
+.content h2,
+h2 {
+  font-size: 1.6rem;
+  color: #145A32; /* Verde oscuro */
+  margin: 200px 130px 50px;
 }
+
+h3 {
+  color: #1D8348; /* Verde medio */
+}
+
 
 /* 
 ----------------------------------------------------------
@@ -113,26 +148,26 @@ Se cambian color, tamaño y márgenes.
 */
 
 /*
-Estilo base para todos los botones que usen la clase .btn.
-Se define la forma redondeada y el espacio interno.
+Los botones comparten padding y esquinas redondeadas.
 */
 .btn {
-  padding: 20px;           /* Espacio interno alrededor del texto del botón */
-  border-radius: 8px;      /* Esquinas redondeadas */
+  padding: 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 /*
-Estilo específico para el botón principal (enviar).
+Botón principal con fondo verde medio.
 */
 .btn-enviar {
-  background: blue;         /* Fondo azul */
-  color: aliceblue;         /* Texto en tono azul muy claro */
+  background: #1D8348; /* Verde medio */
+  color: #FFFFFF;       /* Texto blanco */
 }
 
 /*
-Estado hover del botón principal.
-Al pasar el ratón, se aclara un poco el color para dar sensación de “clic”.
+En hover se aumenta el brillo para indicar interacción.
 */
 .btn-enviar:hover {
-  filter: brightness(1.50); /* Aumenta el brillo un 50% (efecto visual de resaltado) */
+  filter: brightness(1.25);
 }
