@@ -1,0 +1,138 @@
+/* 
+----------------------------------------------------------
+   SECCIÓN GLOBAL: ESTILOS BASE Y RESETEO
+----------------------------------------------------------
+*/
+
+/* 
+El selector universal (*) aplica estilos a TODOS los elementos del documento HTML.
+Aquí damos un color de fondo común para visualizar bien el área de la página.
+*/
+* {
+  background-color: blanchedalmond; /* Fondo beige claro aplicado a todo */
+}
+
+/* 
+El elemento raíz <html> define el color base del texto de toda la página.
+Este color puede heredarse por los elementos descendientes.
+*/
+html {
+  color: black; /* Texto negro por defecto */
+}
+
+/*
+El cuerpo del documento. Aquí se definen los estilos generales del texto y la fuente.
+*/
+body {
+  font-family: Arial;    /* Fuente general del sitio */
+  font-size: 16px;       /* Tamaño base del texto (legible en pantallas) */
+  /* No se establece color ni fondo porque ya los hereda de html y * */
+}
+
+/* 
+----------------------------------------------------------
+   CABECERA <header>
+----------------------------------------------------------
+*/
+
+/*
+Estilo general del encabezado de la página.
+Se centra el texto y se usa un color de fondo destacado con texto claro encima.
+*/
+header {
+  text-align: center;     /* Centra el contenido horizontalmente */
+  background-color: blue; /* Fondo azul */
+  color: azure;           /* Texto en azul muy claro (buen contraste sobre azul oscuro) */
+}
+
+/*
+Este selector afecta solo a las imágenes dentro del <header>.
+Así se controlan sus proporciones sin deformarlas.
+*/
+header img {
+  width: 100px;  /* Ancho fijo de 100 píxeles */
+  height: auto;  /* Mantiene proporciones originales (evita distorsión) */
+}
+
+/* 
+----------------------------------------------------------
+   ENLACES <a>
+----------------------------------------------------------
+*/
+
+/*
+Estilo base de los enlaces: sin subrayado para un aspecto más limpio.
+*/
+a {
+  text-decoration: none; /* Quita la línea inferior de los enlaces */
+}
+
+/*
+Cuando el usuario pasa el ratón por encima (hover), se subraya para indicar interactividad.
+*/
+a:hover {
+  text-decoration: underline; /* Subrayado en el estado hover */
+}
+
+/* 
+----------------------------------------------------------
+   CLASE .logo
+----------------------------------------------------------
+*/
+
+/*
+Clase aplicada probablemente a una imagen de logotipo o similar.
+Permite reutilizar el estilo donde se necesite.
+*/
+.logo {
+  width: 20%;            /* Ocupa el 20% del ancho del contenedor padre */
+  height: auto;          /* Mantiene proporción original */
+  border-radius: 10px;   /* Redondea ligeramente las esquinas */
+}
+
+/* 
+----------------------------------------------------------
+   CLASE .content h2
+----------------------------------------------------------
+*/
+
+/*
+Estilo para los títulos <h2> dentro de un contenedor con clase .content.
+Se cambian color, tamaño y márgenes.
+*/
+.content h2 {
+  font-size: 1.6rem;             /* Tamaño de letra relativo (1rem = 16px → 25.6px) */
+  color: blue;                   /* Texto azul */
+  margin: 200px 130px 50px;      /* Margen: 200px arriba, 130px a los lados, 50px abajo */
+}
+
+/* 
+----------------------------------------------------------
+   BOTONES
+----------------------------------------------------------
+*/
+
+/*
+Estilo base para todos los botones que usen la clase .btn.
+Se define la forma redondeada y el espacio interno.
+*/
+.btn {
+  padding: 20px;           /* Espacio interno alrededor del texto del botón */
+  border-radius: 8px;      /* Esquinas redondeadas */
+}
+
+/*
+Estilo específico para el botón principal (enviar).
+*/
+.btn-enviar {
+  background: blue;         /* Fondo azul */
+  color: aliceblue;         /* Texto en tono azul muy claro */
+}
+
+/*
+Estado hover del botón principal.
+Al pasar el ratón, se aclara un poco el color para dar sensación de “clic”.
+*/
+.btn-enviar:hover {
+  filter: brightness(1.50); /* Aumenta el brillo un 50% (efecto visual de resaltado) */
+}
