@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiservicios Mariano</title>
+
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 
 <body>
@@ -11,11 +14,12 @@
     <header>
         <h1>Multiservicios Mariano</h1>
         <p>Soluciones prácticas para tu día a día en el campo y en la ciudad.</p>
-        <img src="logo.jpg" alt="Profesional pintando" width="200">
+        <img src="logo.jpg" alt="Profesional pintando" class="logo" >        
+        
     </header>
 
     <main>
-        <article>
+        <article class="content">
             <h2>Servicios que ofrecemos</h2>
             <p>
                 En <strong>Multiservicios Mariano</strong> realizamos todo tipo de tareas domésticas, agrícolas y de mantenimiento.  
@@ -30,7 +34,8 @@
             </ul>
 
             <h3>Tarifas orientativas</h3>
-            <table border="1">
+            
+            <table>
                 <thead>
                     <tr>
                         <th>Servicio</th>
@@ -88,8 +93,8 @@
                 </label>
                 <br><br>
 
-                <button type="submit">Enviar</button>
-                <button type="reset">Borrar</button>
+                <button type="submit" class="btn btn-enviar">Enviar</button>
+                <button type="reset" class="btn btn-borrar">Borrar</button>
             </form>
         </section>
     </main>
