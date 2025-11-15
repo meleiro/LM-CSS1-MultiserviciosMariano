@@ -5,26 +5,29 @@
 */
 
 /* 
-El selector universal aplica un color de fondo base a todo el documento.
-Se utiliza un verde muy claro para facilitar la lectura sobre el fondo.
+El selector universal (*) aplica reglas a absolutamente 
+todos los elementos del documento.
+Aquí se usa para establecer un color de fondo homogéneo.
 */
 * {
-  background-color: #EAF4EC; /* Verde claro */
+  background-color: #EAF4EC; /* Verde muy claro aplicado globalmente */
 }
 
 /* 
-El elemento raíz define color base del texto.
+El elemento raíz <html> define el color base del texto del documento
+(el color se hereda en la mayoría de etiquetas).
 */
 html {
-  color: #1A1A1A; /* Gris oscuro para alta legibilidad */
+  color: #1A1A1A; /* Gris oscuro para buen contraste sobre fondo claro */
 }
 
 /*
-Fuente base del documento. Se usa Poppins por su buena legibilidad y estilo geométrico.
+El body establece la fuente general y el tamaño de letra base.
+La mayoría de elementos heredan estas propiedades.
 */
 body {
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 16px;
+  font-family: "Poppins", Arial, sans-serif; /* Fuente principal */
+  font-size: 16px; /* Tamaño estándar fácil de leer */
 }
 
 
@@ -33,35 +36,50 @@ body {
 ---------------------------------------------------------- */
 
 header {
-  background-color: #111;   /* Gris casi negro */
-  color: #fff;              /* Texto blanco */
-  text-align: center;
-  padding: 30px 0;
+  background-color: #111; /* Fondo sólido gris casi negro */
+  color: #fff;            /* Texto blanco para contraste */
+  text-align: center;     /* Centra el contenido del header */
+  padding: 30px 0;        /* Espaciado vertical superior e inferior */
 }
 
-/* Subtítulo */
+/*  
+Estilo para el párrafo dentro del header.
+Se mantiene el mismo color de fondo para evitar parches visuales.
+*/
 header p {
-  color: #ccc;              /* Gris claro */
-  background-color: #111;   /* Asegura que NO queda franja blanca debajo */
-  margin: 0;
-  padding: 10px 0;
+  color: #ccc;            /* Gris claro para diferenciar del título */
+  margin: 0;              /* Elimina espacio superior/inferior del párrafo */
+  padding: 10px 0;        /* Añade espacio interno */
+  background-color: #111; /* Igual al header para continuidad visual */
 }
 
-/* Imagen dentro de la cabecera */
+/* 
+Las imágenes del header reciben un fondo oscuro para evitar bordes claros.
+Se ajustan proporciones sin deformarse.
+*/
 header img {
-  background-color: #111;   /* Evita que salga un rectángulo claro */
-  border-radius: 10px;
-  margin-top: 20px;
-  width: 180px;
-  height: auto;
+  background-color: #111; /* Fondo igual al header */
+  border-radius: 10px;    /* Esquinas suavemente redondeadas */
+  margin-top: 20px;       /* Separación respecto al título/párrafo */
+  width: 180px;           /* Tamaño fijo de ancho */
+  height: auto;           /* Mantiene proporción original */
 }
 
-/* Si tienes un contenedor de la imagen dentro del header */
+/*
+Si existe un contenedor .img-wrapper dentro del header,
+su fondo también se fija en oscuro para evitar diferencias de color.
+*/
 header .img-wrapper {
-  background-color: #111;    /* Elimina fondos claros */
+  background-color: #111;
   padding: 20px 0;
 }
 
+/*
+El título H1 del encabezado mantiene el mismo fondo que todo el header.
+*/
+header h1 {
+  background-color: #111;
+}
 
 
 /* 
@@ -71,12 +89,12 @@ header .img-wrapper {
 */
 
 /*
-Área destacada donde se muestra la imagen principal.
-El fondo se cambia a un verde medio para generar contraste uniforme.
+Selector para áreas "destacadas" o contenedores grandes con imagen.
+El fondo se define mediante un verde suave.
 */
 .hero-area,
 .hero {
-  background-color: #A8D5BA; /* Verde suave */
+  background-color: #A8D5BA; /* Verde medio-claro */
 }
 
 
@@ -87,19 +105,20 @@ El fondo se cambia a un verde medio para generar contraste uniforme.
 */
 
 /*
-Los enlaces usan un color verde oscuro que mantiene contraste suficiente.
+Todos los enlaces parten sin subrayado y con un color verde oscuro.
 */
 a {
-  text-decoration: none;
-  color: #145A32; /* Verde oscuro */
+  text-decoration: none; /* Elimina el subrayado inicial */
+  color: #145A32;        /* Verde oscuro */
 }
 
 /*
-El estado hover modifica ligeramente el color para indicar interacción.
+Cuando el usuario pasa el ratón, el enlace se subraya
+y se aclara ligeramente el color para indicar interacción.
 */
 a:hover {
-  text-decoration: underline;
-  color: #27AE60; /* Verde más claro */
+  text-decoration: underline; /* Subraya en hover */
+  color: #27AE60;             /* Verde más claro */
 }
 
 
@@ -110,32 +129,36 @@ a:hover {
 */
 
 /*
-La clase .logo controla el tamaño y la forma del logotipo.
+La clase aplicada al logotipo controla tamaño y estilo visual.
 */
 .logo {
-  width: 20%;
-  height: auto;
-  border-radius: 10px;
-  border: 2px solid #145A32; /* Borde verde oscuro */
+  width: 20%;                  /* Ocupa el 20% del ancho del contenedor */
+  height: auto;                /* Mantiene proporción */
+  border-radius: 10px;         /* Esquinas redondeadas */
+  border: 2px solid #145A32;   /* Borde verde oscuro */
 }
 
 
 /* 
 ----------------------------------------------------------
-   TITULOS
+   TÍTULOS
 ----------------------------------------------------------
 */
 
 /*
-Estilo para <h2> dentro de la sección .content.
+Estilo aplicado a <h2> dentro de .content,
+y también a cualquier h2 general del documento.
 */
 .content h2,
 h2 {
-  font-size: 1.6rem;
-  color: #145A32; /* Verde oscuro */
-  margin: 200px 130px 50px;
+  font-size: 1.6rem;         /* Tamaño relativo (1.6 × tamaño base) */
+  color: #145A32;            /* Verde oscuro */
+  margin: 200px 130px 50px;  /* Margen superior, laterales e inferior */
 }
 
+/*
+Estilo para títulos de nivel 3 (<h3>).
+*/
 h3 {
   color: #1D8348; /* Verde medio */
 }
@@ -148,26 +171,101 @@ h3 {
 */
 
 /*
-Los botones comparten padding y esquinas redondeadas.
+Estilo básico para cualquier elemento con clase .btn.
 */
 .btn {
-  padding: 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+  margin-top: 20px;    /* Espacio superior respecto a otros elementos */
+  padding: 20px;       /* Espaciado interno grande */
+  border-radius: 8px;  /* Bordes redondeados */
+  border: none;        /* Elimina bordes por defecto */
+  cursor: pointer;     /* Cambia cursor a mano para indicar clic */
 }
 
 /*
-Botón principal con fondo verde medio.
+Botón principal para acciones importantes.
 */
 .btn-enviar {
   background: #1D8348; /* Verde medio */
-  color: #FFFFFF;       /* Texto blanco */
+  color: #FFFFFF;      /* Texto blanco */
 }
 
 /*
-En hover se aumenta el brillo para indicar interacción.
+Botón secundario.
+*/
+.btn-borrar {
+  background-color: blue;
+  color: #FFFFFF;
+}
+
+/*
+Efecto hover que aumenta el brillo del botón para indicar interacción.
 */
 .btn-enviar:hover {
-  filter: brightness(1.25);
+  filter: brightness(1.25); /* Incrementa luminosidad un 25% */
+}
+
+
+/* 
+----------------------------------------------------------
+   TABLA DE TARIFAS
+----------------------------------------------------------
+*/
+
+.tabla-tarifas {
+  width: 100%;           /* Ocupa el ancho completo del contenedor */
+  border: 2px solid #333;
+  border-radius: 8px;    /* Bordes redondeados */
+  background: #fff;      /* Fondo blanco */
+  overflow: hidden;      /* Oculta bordes internos sobresalientes */
+  text-align: ce;        /* (posible error: debería ser "center") */
+}
+
+/* Encabezado de tabla */
+.tabla-tarifas thead th {
+  background: #1D8348;   /* Verde medio */
+  color: #fff;           /* Texto blanco */
+  padding: 10px;         /* Espaciado interno */
+  border-bottom: 4px solid #333;
+}
+
+/* Celdas de tabla */
+.tabla-tarifas td {
+  border: 1px solid #333;
+  padding: 40px;         /* Espaciado interno amplio */
+  vertical-align: top;   /* Alineación superior del contenido */
+}
+
+
+/* 
+----------------------------------------------------------
+   FORMULARIO
+----------------------------------------------------------
+*/
+
+/* Título del formulario */
+.contacto h2 {
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+/* Párrafos del formulario */
+.contacto p {
+  margin-bottom: 8px;
+}
+
+/*
+Contenedor general del formulario, con borde y fondo blanco.
+*/
+.form {
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+/*
+Estilo para inputs: añade espacio superior.
+*/
+input {
+  margin-top: 40px;
 }
